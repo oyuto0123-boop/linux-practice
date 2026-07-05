@@ -2,24 +2,24 @@
 
 ## Q1.現在いるディレクトリパスを表示
 コマンド：pwd<br>
-結　　果："/home/ohta/dev/linux-practice"<br>
-解　　説："pwd(print working directory) 現在地を表示するコマンド。"<br>
+結　　果：/home/ohta/dev/linux-practice<br>
+解　　説：pwd(print working directory) 現在地を表示するコマンド。<br>
 
 ## Q2.ホームディレクトリへ移動
-コマンド："ohta@NX:~/dev/linux-practice$ cd ~"<br>
-結　　果："ohta@NX:~$"<br> 
-解　　説："~(ホームディレクトリを表す記号)。cdだけも可。"<br>
+コマンド：ohta@NX:～/dev/linux-practice$ cd ～<br>
+結　　果：ohta@NX:～$<br> 
+解　　説：～(ホームディレクトリを表す記号)。cdだけも可。<br>
 
 ## Q3.カレントディレクトリのファイルとディレクトリ一覧の表示
 コマンド：ls<br>
-結　　果："dev"<br>
-解　　説："ls(list)はファイルとディレクトリを一覧表示する。devはディレクトリ。○.txtはテキストファイル。"<br>
+結　　果：dev<br>
+解　　説：ls(list)はファイルとディレクトリを一覧表示する。devはディレクトリ。○.txtはテキストファイル。<br>
 
 ## Q4.隠しファイルを含めて表示
 コマンド：ls -a<br>
-結　　果：".   .bash_history  .bashrc  .config   .gitconfig  .motd_shown  .python_history  .vscode-server"<br>
-　　　　　"..  .bash_logout   .cache   .copilot  .local      .profile     .ssh             dev"<br>
-解　　説："オプション-aはallの意味。隠しファイルも表示される。"<br>
+結　　果：.   .bash_history  .bashrc  .config   .gitconfig  .motd_shown  .python_history  .vscode-server<br>
+　　　　　..  .bash_logout   .cache   .copilot  .local      .profile     .ssh             dev<br>
+解　　説：オプション-aはallの意味。隠しファイルも表示される。<br>
 
 ## Q5.権限・所有者・サイズ・更新日時を含む詳細一覧の表示
 コマンド：ls -l
