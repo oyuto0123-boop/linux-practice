@@ -1,81 +1,267 @@
-# 基本操作
+# Linux コマンド練習 100 本ノック — 基本操作 (Q1〜Q10)
 
-## Q1.現在いるディレクトリパスを表示
-コマンド：pwd<br>
-結　　果：/home/ohta/dev/linux-practice<br>
-解　　説：pwd(print working directory) 現在地を表示するコマンド。<br>
+> 実行環境: Ubuntu on WSL2
+>
+> ※ ユーザー名・ホスト名は `user` / `host` に置き換えています。
 
-## Q2.ホームディレクトリへ移動
-コマンド：ohta@NX:～/dev/linux-practice$ cd ～<br>
-結　　果：ohta@NX:～$<br> 
-解　　説：～(ホームディレクトリを表す記号)。cdだけも可。<br>
+---
 
-## Q3.カレントディレクトリのファイルとディレクトリ一覧の表示
-コマンド：ls<br>
-結　　果：dev<br>
-解　　説：ls(list)はファイルとディレクトリを一覧表示する。devはディレクトリ。○.txtはテキストファイル。<br>
+## Q1. 現在いるディレクトリのパスを表示する
 
-## Q4.隠しファイルを含めて表示
-コマンド：ls -a<br>
-結　　果：.   .bash_history  .bashrc  .config   .gitconfig  .motd_shown  .python_history  .vscode-server<br>
-　　　　　..  .bash_logout   .cache   .copilot  .local      .profile     .ssh             dev<br>
-解　　説：オプション-aはallの意味。隠しファイルも表示される。<br>
+**コマンド**
 
-## Q5.権限・所有者・サイズ・更新日時を含む詳細一覧の表示
-コマンド：ls -l<br>
-結　　果：total 4<br>
-　　　　　drwxr-xr-x 3 ohta ohta 4096 Jul  5 23:20 dev<br>
-解　　説：オプション-lはlong formatの意味。詳細一覧が表示される。<br>
+```bash
+pwd
+```
 
-## Q6.隠しファイルの詳細まで表示
-コマンド：ls -al<br>
-結　　果：<br>
-total 60<br>
-drwxr-x--- 9 ohta ohta 4096 Jul  5 23:26 .<br>
-drwxr-xr-x 3 root root 4096 Jun 21 15:53 ..<br>
--rw------- 1 ohta ohta 1965 Jul  5 23:25 .bash_history<br>
--rw-r--r-- 1 ohta ohta  220 Jun 21 15:53 .bash_logout<br>
--rw-r--r-- 1 ohta ohta 3771 Jun 21 15:53 .bashrc<br>
-drwxr-x--- 6 ohta ohta 4096 Jul  5 23:26 .cache<br>
-drwxr-x--- 3 ohta ohta 4096 Jun 21 15:54 .config<br>
-drwx------ 3 ohta ohta 4096 Jul  5 23:26 .copilot<br>
--rw-r--r-- 1 ohta ohta   59 Jun 29 23:43 .gitconfig<br>
-drwx------ 3 ohta ohta 4096 Jun 29 23:29 .local<br>
--rw-rw-r-- 1 ohta ohta    0 Jul  5 22:55 .motd_shown<br>
--rw-r--r-- 1 ohta ohta  807 Jun 21 15:53 .profile<br>
--rw-r--r-- 1 ohta ohta    7 Jun 26 14:34 .python_history<br>
-drwx------ 3 ohta ohta 4096 Jul  5 23:20 .ssh<br>
-drwxr-xr-x 5 ohta ohta 4096 Jul  5 23:26 .vscode-server<br>
-drwxr-xr-x 3 ohta ohta 4096 Jul  5 23:20 dev<br>
-解　　説：オプションは組み合わせ可能。-alでも-laでも可<br>
+**結果**
 
-## Q7.画面をクリアにする
-コマンド：clear<br>
-結　　果：<br>
-解　　説：画面出力が多く、見えにくいときに使用。画面はきれいになるが、↑で過去のコマンドは引用可能。ctrl+Lも同じ効果。<br>
+```
+/home/user/dev/linux-practice
+```
 
-## Q8.過去に実行したコマンドの履歴の表示
-コマンド：history<br>
-結　　果：<br>
-    1  exit<br>
-    2  ifconfig<br>
-    3  sudo ifconfig<br>
-    4  which is<br>
-    5  which ls<br>
-    6  ls<br>
-    7  ls -l<br>
-    8  ls<br>
-    9  which python<br>
-   10  sudo which python<br>
-   ・・・・・・略・・・・・・<br>
-解　　説：過去のコマンドが番号付きで表示。!コマンド番号で再実行可能。ctrl+Rで検索可。<br>
+**解説**
 
-## Q9.ターミナルにHello,Linuxと表示
-コマンド：echo "Hello,Linux"<br>
-結　　果：Hello,Linux<br>
-解　　説：echoは文字列を表示するコマンド。<br>
+`pwd` は print working directory の略で、現在いるディレクトリの絶対パスを表示する。
 
-## Q10.lsコマンドのマニュアル表示
-コマンド：man ls<br>
-結　　果：色々表示される。<br>
-解　　説：man(manual)は、コマンドの使い方、オプション一覧などを確認でき、Qを押すと終了できる。<br>
+---
+
+## Q2. ホームディレクトリへ移動する
+
+**コマンド**
+
+```bash
+cd ~
+```
+
+**結果**
+
+```
+user@host:~/dev/linux-practice$ cd ~
+user@host:~$
+```
+
+**解説**
+
+`~`(チルダ)はホームディレクトリを表す記号。
+
+`cd` を引数なしで実行しても同じくホームディレクトリに移動する。
+
+⚠️ ここで使うのは**半角の** `~` (ASCII の tilde)。全角の `～`(波ダッシュ)では別の文字として扱われ、コマンドは失敗する。
+
+補足として、`cd -` で直前にいたディレクトリに戻れる。
+
+---
+
+## Q3. カレントディレクトリのファイルとディレクトリ一覧を表示する
+
+**コマンド**
+
+```bash
+ls
+```
+
+**結果**
+
+```
+dev
+```
+
+**解説**
+
+`ls` は list の略で、ファイルとディレクトリを一覧表示する。
+
+デフォルトでは名前が並ぶだけなので、ファイルかディレクトリかを見分けたい場合は `ls -F` を使う。ディレクトリには `/`、実行可能ファイルには `*` が末尾に付く。
+
+---
+
+## Q4. 隠しファイルを含めて表示する
+
+**コマンド**
+
+```bash
+ls -a
+```
+
+**結果**
+
+```
+.   .bash_history  .bashrc  .config   .gitconfig  .motd_shown  .python_history  .vscode-server
+..  .bash_logout   .cache   .copilot  .local      .profile     .ssh             dev
+```
+
+**解説**
+
+`-a` は all の意味。`.` から始まる隠しファイルも表示される。
+
+`.` はカレントディレクトリ、`..` は一つ上の親ディレクトリを指す。この2つを除いて表示したい場合は `-A` を使う。
+
+---
+
+## Q5. 権限・所有者・サイズ・更新日時を含む詳細一覧を表示する
+
+**コマンド**
+
+```bash
+ls -l
+```
+
+**結果**
+
+```
+total 4
+drwxr-xr-x 3 user user 4096 Jul  5 23:20 dev
+```
+
+**解説**
+
+`-l` は long format の意味。左から順に次の情報が並ぶ。
+
+| 項目 | 例 | 意味 |
+| --- | --- | --- |
+| ファイル種別＋パーミッション | `drwxr-xr-x` | 先頭 `d` はディレクトリ、`-` は通常ファイル。以降3文字ずつで所有者・グループ・その他の読み(`r`)/書き(`w`)/実行(`x`)権限 |
+| ハードリンク数 | `3` | ディレクトリの場合はサブディレクトリ数に関係する |
+| 所有者 | `user` | |
+| グループ | `user` | |
+| サイズ | `4096` | バイト単位。`-h` を付けると `4.0K` のように読みやすくなる |
+| 更新日時 | `Jul 5 23:20` | |
+| 名前 | `dev` | |
+
+---
+
+## Q6. 隠しファイルの詳細まで表示する
+
+**コマンド**
+
+```bash
+ls -al
+```
+
+**結果**
+
+```
+total 60
+drwxr-x--- 9 user user 4096 Jul  5 23:26 .
+drwxr-xr-x 3 root root 4096 Jun 21 15:53 ..
+-rw------- 1 user user 1965 Jul  5 23:25 .bash_history
+-rw-r--r-- 1 user user  220 Jun 21 15:53 .bash_logout
+-rw-r--r-- 1 user user 3771 Jun 21 15:53 .bashrc
+drwxr-x--- 6 user user 4096 Jul  5 23:26 .cache
+drwxr-x--- 3 user user 4096 Jun 21 15:54 .config
+drwx------ 3 user user 4096 Jul  5 23:26 .copilot
+-rw-r--r-- 1 user user   59 Jun 29 23:43 .gitconfig
+drwx------ 3 user user 4096 Jun 29 23:29 .local
+-rw-rw-r-- 1 user user    0 Jul  5 22:55 .motd_shown
+-rw-r--r-- 1 user user  807 Jun 21 15:53 .profile
+-rw-r--r-- 1 user user    7 Jun 26 14:34 .python_history
+drwx------ 3 user user 4096 Jul  5 23:20 .ssh
+drwxr-xr-x 5 user user 4096 Jul  5 23:26 .vscode-server
+drwxr-xr-x 3 user user 4096 Jul  5 23:20 dev
+```
+
+**解説**
+
+オプションは組み合わせて指定できる。`-al` でも `-la` でも結果は同じ。
+
+`.bash_history` や `.ssh` が `-rw-------` / `drwx------`(所有者のみアクセス可)になっている点に注目したい。認証情報を含むファイルは、他のユーザーから読めない権限に設定されている。
+
+---
+
+## Q7. 画面をクリアにする
+
+**コマンド**
+
+```bash
+clear
+```
+
+**結果**
+
+画面の出力が消え、プロンプトが最上部に移動する。
+
+**解説**
+
+出力が多くて見づらくなったときに使う。
+
+画面上は消えるが履歴が失われるわけではなく、`↑` キーで過去のコマンドを呼び出せる。`Ctrl + L` でも同じ効果が得られる。
+
+---
+
+## Q8. 過去に実行したコマンドの履歴を表示する
+
+**コマンド**
+
+```bash
+history
+```
+
+**結果**
+
+```
+    1  exit
+    2  ifconfig
+    3  sudo ifconfig
+    4  which is
+    5  which ls
+    6  ls
+    7  ls -l
+    8  ls
+    9  which python
+   10  sudo which python
+   ・・・・・・略・・・・・・
+```
+
+**解説**
+
+過去に実行したコマンドが番号付きで表示される。
+
+- `!5` のように `!番号` で、その番号のコマンドを再実行できる
+- `Ctrl + R` でインクリメンタル検索ができ、途中まで打つと該当するコマンドが候補に出る
+
+---
+
+## Q9. ターミナルに Hello,Linux と表示する
+
+**コマンド**
+
+```bash
+echo "Hello,Linux"
+```
+
+**結果**
+
+```
+Hello,Linux
+```
+
+**解説**
+
+`echo` は指定した文字列を標準出力に表示するコマンド。
+
+この例では引用符がなくても同じ結果になるが、スペースや `*`、`$` などを含む文字列ではシェルが解釈してしまうため、引用符で囲むのが安全。
+
+---
+
+## Q10. ls コマンドのマニュアルを表示する
+
+**コマンド**
+
+```bash
+man ls
+```
+
+**結果**
+
+`ls` のマニュアルがページャで開き、NAME(概要)、SYNOPSIS(書式)、DESCRIPTION(オプション一覧)といったセクションが順に表示される。
+
+**解説**
+
+`man` は manual の略で、コマンドの使い方やオプションを確認できる。
+
+表示は `less` というページャで行われるため、以下の操作が使える。
+
+- `q` … 終了
+- `↑` `↓` / `Space` … スクロール
+- `/文字列` … ページ内検索
+
+GNU 版のコマンドでは `ls --help` のほうが簡潔で読みやすいことも多い。
