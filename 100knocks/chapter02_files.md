@@ -8,7 +8,7 @@
 
 ## ファイル・ディレクトリの操作
 
-### Q1. `test.txt` を作成する
+### Q1. test.txt を作成する
 
 **コマンド**
 
@@ -31,7 +31,7 @@ user@host:~/dev/linux-practice$ ls
 
 ---
 
-### Q2. `mydir` というディレクトリを作成する
+### Q2. mydir というディレクトリを作成する
 
 **コマンド**
 
@@ -56,7 +56,7 @@ Linux のコマンド名・ファイル名は**大文字小文字を区別する
 
 ---
 
-### Q3. `test.txt` を `backup.txt` という名前でコピーする
+### Q3. test.txt を backup.txt という名前でコピーする
 
 **コマンド**
 
@@ -79,7 +79,7 @@ user@host:~/dev/linux-practice$ ls
 
 ---
 
-### Q4. `backup.txt` を `renamed.txt` にリネームする
+### Q4. backup.txt を renamed.txt にリネームする
 
 **コマンド**
 
@@ -105,7 +105,7 @@ user@host:~/dev/linux-practice$ ls
 
 ---
 
-### Q5. `renamed.txt` を `mydir/` へ移動する
+### Q5. renamed.txt を mydir/ へ移動する
 
 **コマンド**
 
@@ -126,7 +126,7 @@ Q4 と同じ `mv` だが、移動先に既存のディレクトリ `mydir` を�
 
 ---
 
-### Q6. `test.txt` を削除する
+### Q6. test.txt を削除する
 
 **コマンド**
 
@@ -149,7 +149,7 @@ user@host:~/dev/linux-practice$ ls
 
 ---
 
-### Q7. `mydir/` を中身ごと削除する
+### Q7. mydir/ を中身ごと削除する
 
 **コマンド**
 
@@ -176,7 +176,7 @@ user@host:~/dev/linux-practice$ ls
 
 ## ファイル内容の確認
 
-### Q8. `/etc/hostname` の内容を表示する
+### Q8. /etc/hostname の内容を表示する
 
 **コマンド**
 
@@ -199,7 +199,7 @@ host
 
 ---
 
-### Q9. `/etc/hosts` の内容を行番号付きで表示する
+### Q9. /etc/hosts の内容を行番号付きで表示する
 
 **コマンド**
 
@@ -221,7 +221,7 @@ cat -n /etc/hosts
 
 ---
 
-### Q10. `/var/log/syslog` の先頭 10 行を表示する
+### Q10. /var/log/syslog の先頭 10 行を表示する
 
 **コマンド**
 
@@ -245,7 +245,7 @@ head /var/log/syslog
 
 ---
 
-### Q11. `/var/log/syslog` の末尾 10 行を表示する
+### Q11. /var/log/syslog の末尾 10 行を表示する
 
 **コマンド**
 
@@ -267,7 +267,7 @@ tail /var/log/syslog
 
 ---
 
-### Q12. `/var/log/syslog` の行数を数える
+### Q12. /var/log/syslog の行数を数える
 
 **コマンド**
 
@@ -289,7 +289,7 @@ wc -l /var/log/syslog
 
 ---
 
-### Q13. `/var/log/syslog` から `error` を含む行を検索する
+### Q13. /var/log/syslog から error を含む行を検索する
 
 **コマンド**
 
